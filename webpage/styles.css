@@ -1,0 +1,172 @@
+/* styles.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap'); /* Elegant font for headings */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap'); /* Stylish font for numbers */
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow for full background animations */
+}
+
+/* Container styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading styles */
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Gold color for a premium feel */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: popIn 0.5s ease both; /* Pop effect */
+    font-family: 'Orbitron', sans-serif; /* Stylish font for numbers */
+    line-height: 1.2;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; /* Glowing effect */
+}
+
+h1 span {
+    display: block;
+}
+
+/* Input styles */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styles */
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Result message styles */
+#result {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #444;
+    font-weight: bold;
+    animation: fadeIn 1s ease both;
+}
+
+/* Audio player styles */
+audio {
+    display: none;
+}
+
+/* Keyframe animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+        transform: scale(1);
+    }
+    h1 {
+        font-size: 36px;
+    }
+    input[type="text"], button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        border-radius: 0;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    input[type="text"], button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Add media query for mobile devices */
+@media (max-width: 480px) {
+    .container {
+        /* Adjust border-radius for smoother edges */
+        border-radius: 15px;
+    }
+}
